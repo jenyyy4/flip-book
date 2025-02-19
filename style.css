@@ -1,0 +1,243 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #2e3537;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book {
+    width: 500px;
+    height: 600px;
+    position: relative;
+    transition-duration: 1s;
+    perspective: 1500px;
+}
+
+input {
+    display: none;
+}
+
+.cover, .back-cover {
+    width: 100%;
+    height: 100%;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 0 5px rgb(41, 41, 41);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cover {
+    background-color: #ffafcc;
+    position: absolute;
+    z-index: 100;
+    transition: transform 1s;
+    transform-origin: left;
+}
+
+.cover label {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: absolute;
+}
+
+#close-book {
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    background-color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+#close-book:hover {
+    background-color: #ffafcc;
+}
+
+
+.cover-heading {
+    font-size: 7rem;
+    font-weight: 900;
+    color: white;
+    z-index: 5;
+    letter-spacing: 20px;
+    margin-left: 20px;
+    font-family: 'Irish Grover';
+    -webkit-text-stroke: 4px #fb6f92;
+}
+
+.back-cover {
+    background-color: #ffcad4;
+    position: relative;
+    z-index: -1;
+}
+
+.page {
+    position: absolute;
+    background-color: white;
+    width: 480px;
+    height: 580px;
+    border-radius: 0 15px 15px 0;
+    margin-top: 10px;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition-duration: 1.5s;
+}
+
+.page img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 0 0 15px;
+}
+
+.front-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.back-page {
+    transform: rotateY(180deg);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    z-index: 99;
+}
+
+.next, .prev {
+    position: absolute;
+    bottom: 1em;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.next {
+    right: 1em;
+}
+
+.prev {
+    left: 1em;
+}
+
+#page1 {
+    z-index: 10;
+}
+
+#page2 {
+    z-index: 9;
+}
+
+#page3 {
+    z-index: 8;
+}
+
+#page4 {
+    z-index: 7;
+}
+
+#page5 {
+    z-index: 6;
+}
+
+#page6 {
+    z-index: 5;
+}
+
+#page7 {
+    z-index: 4;
+}
+
+#page8 {
+    z-index: 3;
+}
+
+#page9 {
+    z-index: 2;
+}
+
+#page10 {
+    z-index: 1;
+}
+
+#checkbox-cover:checked ~ .book {
+    transform: translateX(200px);
+}
+
+#checkbox-cover:checked ~ .book .cover {
+    transform: rotateY(-180deg);
+    z-index: 1; /* Keep it behind other pages */
+}
+
+#checkbox-cover:checked ~ .book .cover h1,
+#checkbox-cover:checked ~ .book .cover p {
+    opacity: 0;
+}
+
+#checkbox-cover:checked ~ .book .page {
+    box-shadow: 0 0 3px rgb(99, 98, 98);
+}
+
+/* Flip Pages */
+#checkbox-page1:checked ~ .book #page1 {
+    transform: rotateY(-180deg);
+    z-index: 2;
+}
+
+#checkbox-page2:checked ~ .book #page2 {
+    transform: rotateY(-180deg);
+    z-index: 3;
+}
+
+#checkbox-page3:checked ~ .book #page3 {
+    transform: rotateY(-180deg);
+    z-index: 4;
+}
+
+#checkbox-page4:checked ~ .book #page4 {
+    transform: rotateY(-180deg);
+    z-index: 5;
+}
+
+#checkbox-page5:checked ~ .book #page5 {
+    transform: rotateY(-180deg);
+    z-index: 6;
+}
+
+#checkbox-page6:checked ~ .book #page6 {
+    transform: rotateY(-180deg);
+    z-index: 7;
+}
+
+#checkbox-page7:checked ~ .book #page7 {
+    transform: rotateY(-180deg);
+    z-index: 8;
+}
+
+#checkbox-page8:checked ~ .book #page8 {
+    transform: rotateY(-180deg);
+    z-index: 9;
+}
+
+#checkbox-page9:checked ~ .book #page9 {
+    transform: rotateY(-180deg);
+    z-index: 10;
+}
+
+#checkbox-page10:checked ~ .book #page10 {
+    transform: rotateY(-180deg);
+    z-index: 11;
+}
